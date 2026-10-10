@@ -25,7 +25,6 @@ public class CreateUserTest {
         User user = new User();
         user.setFirstName("Irfan");
         user.setLastName("Hossain");
-        user.setLastName(RandomUtils.getRandomAlphabeticString());
         user.setEmail(RandomUtils.getRandomAlphabeticString());
         user.setPassword(RandomUtils.getRandomAlphabeticString());
         user.setPhone(RandomUtils.getRandomAlphabeticString());
@@ -40,6 +39,6 @@ public class CreateUserTest {
                 .post(CREATE_USER_ENDPOINT)
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.SC_BAD_REQUEST)
+                ..statusCode(HttpStatus.SC_OK);
     }
 }
